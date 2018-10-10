@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "约饭福利社",
+    "navigationBarTextStyle":"#fff"
+  }
+}

@@ -1,0 +1,77 @@
+.bg-container{
+	padding: 0;
+	font-size: 0;
+}
+image{
+	width: 100%;
+	height: 718rpx;
+	max-width: 100%;
+}
+.hint-toast-container{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, .5);
+	z-index: 333;
+}
+.hint-toast{
+	width: 540rpx;
+	height: 340rpx;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	font-size: 26rpx;
+	box-sizing: border-box;
+	padding-top: 30rpx;
+	border-radius: 10rpx;
+	overflow: hidden;
+}
+
+.hint-toast .toast-title{
+	text-align: center;
+	font-size: 30rpx;
+	margin-bottom: 10rpx;
+
+}
+
+.hint-toast .toast-content{
+	height: 90rpx;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	line-height: 45rpx;
+	padding: 30rpx;
+	color: #535353;
+}
+
+
+.hint-toast .toast-btn-box{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	border-top: 1rpx solid #e2e2e2; 
+}
+
+.hint-toast .toast-btn-box button{
+	width: 50%;
+	height: 84rpx;
+	font-size: 26rpx;
+	line-height: 84rpx;
+	background-color: #fff;
+	-webkit-appearance: none;
+	border-radius: 0px;
+	border: 0;
+}
+
+.hint-toast .toast-btn-box button:last-child{
+	border-left: 1rpx solid #e2e2e2; 
+	color: #2297ca;
+}

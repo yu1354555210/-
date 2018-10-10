@@ -1,0 +1,3 @@
+<!--pages/importStars/importStars.wxml-->
+<import src="../template/stars/stars.wxml"/>
+<template is="stars" data="{{...starsList[0]}}"></template>

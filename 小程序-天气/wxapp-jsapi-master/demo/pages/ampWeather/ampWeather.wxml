@@ -1,0 +1,96 @@
+<wxs module="m1">
+	var getLast = function(index,str){
+		if(index == 0){
+			return "现在";
+		} else {
+			return str.split(" ")[1];
+		}
+	}
+
+
+    var getDailyDate = function(index, str) {
+        if (index == 0) {
+            return "今天";
+        } else {
+            return str.split("-")[1] + "/" + str.split("-")[2];
+        }
+    }
+
+	module.exports.getLast = getLast;
+	module.exports.getDailyDate = getDailyDate;
+	
+</wxs>
+<view class="container">
+    <view class='bg'>
+        <image src='../../image/bg.png' mode='aspectFill'></image>
+    </view>
+     <loading hidden="{{loadingHidden}}">定位中</loading> 
+    <view class="newTopView">
+
+        <!--当前温度-->
+        <view class="degree">{{tmp}}</view>
+        <view class='icon-degree iconfont circle'></view>
+
+        <!--左边添加当前城市名字，点击跳转选择城市 右边添加刷新当前天气-->
+        <view class='city'>{{city}}</view>
+        <view class='cond'> {{condTxt}}</view>
+    </view>
+    <view class='degreeOther'>
+        <view>
+            <text class='iconfont icon-shuye'></text>
+            <text>{{qlty}} {{aqi}}</text>
+        </view>
+        <view>
+            <text class='iconfont icon-feng'></text>
+            <text>{{windDir}} {{windSc}}</text>
+        </view>
+    </view>
+    <scroll-view class='hourly' scroll-x="true">
+        <block wx:for="{{hourlyArr}}" wx:key="unique" style="display: block;">
+            <view class='oneHourly'>
+                <view class='oneHourlyFlex'>
+                    <view class='hourlyDate'>{{m1.getLast(index,item.time)}}</view>
+                    <image class='hourlyImg' src='../../image/{{item.cond_code}}.png' mode='aspectFit'></image>
+                    <view class='hourlyTmp'>{{item.tmp}}°</view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class='weatherOther'>
+        <block wx:for="{{otherDayList}}">
+            <view class='weatherDayItem'>               
+                <view>{{m1.getDailyDate(index,item.date)}}</view>
+                <view class='cond'>
+                    <image src='../../image/{{item.cond_code_d}}.png'></image>
+                    <text>{{item.cond_txt_d}}</text>
+                </view>
+                <view>{{item.tmp_max}} / {{item.tmp_min}}
+                    <text class='iconfont icon-degree'></text>
+                </view>
+            </view>
+        </block>
+    </view>
+	<view class='lifestyle'>
+		<ul>
+			<block>
+				<li>
+					<text class='iconfont icon-yaoping'></text>
+					<text>{{lifeList[2].brf}}感冒</text>
+				</li>
+				<li>
+					<text class='iconfont icon-tubiao-'></text>
+					<text>{{lifeList[1].brf}}</text>
+				</li>
+				<li>
+					<text class='iconfont icon-qichezhizao'></text>
+					<text>{{lifeList[6].brf}}洗车</text>
+				</li>
+				<li>
+					<text class='iconfont icon-73'></text>
+					<text>紫外线{{lifeList[5].brf}}</text>
+				</li>
+			</block>
+		</ul>
+	</view>
+	<view class='footer'>实时天气数据来自 和风天气</view>
+</view>

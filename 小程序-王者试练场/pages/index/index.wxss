@@ -1,0 +1,277 @@
+
+/**
+     * 历史记录
+ */
+.entry-main {
+  padding: 23rpx 14rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.entry-main .entry-shortcut-nav {
+  background-color: #fff;
+  height: 94rpx;
+  line-height: 94rpx;
+  overflow: hidden;
+}
+.entry-main .entry-shortcut-nav ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.entry-main .entry-shortcut-nav ul li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.entry-main .entry-shortcut-nav ul li:after {
+  height: 100%;
+  content: '';
+  width: 1px;
+  border-right: 1px solid #b2b2b2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: scaleX(0.5);
+  -webkit-transform: scaleX(0.5);
+  z-index: 10;
+}
+.entry-main .entry-shortcut-nav ul li:last-child:after {
+  border-right: none;
+}
+.entry-main .entry-shortcut-nav ul li navigator {
+  height: 100%;
+  color: #333333;
+  display: block;
+  font-size: 30rpx;
+}
+.entry-main .entry-shortcut-nav ul li navigator text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.entry-main .entry-shortcut-nav ul li navigator .entry-shortcut-icon {
+  width: 50rpx;
+  height: 50rpx;
+  background-size: 100% 100%;
+}
+.entry-main .entry-shortcut-nav ul li navigator text.icon-board {
+  background-image: url(https://api-yxdl.binglue.com/img/short-icon01.png);
+  margin-right: 10rpx;
+}
+.entry-main .entry-shortcut-nav ul li navigator text.icon-star {
+  background-image: url(https://api-yxdl.binglue.com/img/short-icon02.png);
+}
+.entry-main .entry-shortcut-nav ul li navigator text.icon-time {
+  background-image: url(https://api-yxdl.binglue.com/img/short-icon03.png);
+}
+.entry-main .entry-shortcut-nav ul li navigator:active {
+  background-color: rgba(233, 233, 233, 0.5);
+}
+/**
+     * 历史记录飞行员卡片
+ */
+.flyer-card-box {
+  margin-bottom: 100rpx;
+}
+.flyer-card-box .flyer-card-item {
+  margin-top: 20rpx;
+  background-color: #fff;
+  height: 310rpx;
+  border-radius: 5rpx;
+  position: relative;
+}
+.flyer-card-box .flyer-card-item .flyer-card-header {
+  padding: 24rpx 32rpx 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.flyer-card-box .flyer-card-item .flyer-card-header .flyer-card-name i {
+  margin-right: 12rpx;
+  color: #0b91ff;
+  font-size: 34rpx;
+}
+.flyer-card-box .flyer-card-item .flyer-card-main {
+  padding: 55rpx 32rpx 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flyer-card-box .flyer-card-item .flyer-card-footer {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  height: 65rpx;
+  margin-top: 45rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #999999;
+  font-size: 20rpx;
+  position: relative;
+}
+.flyer-card-box .flyer-card-item .flyer-card-footer:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  color: #d9d9d9;
+  border-top: 1px solid #dbdbdb;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.flyer-card-box .flyer-card-item .flyer-card-footer text {
+  margin-right: 52rpx;
+}
+.timebar-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+}
+.timebar-box > view {
+  float: left;
+}
+.timebar-box .timebar {
+  font-size: 60rpx;
+  color: #666666;
+  border-bottom: 3rpx solid #666666;
+  padding: 0 12rpx;
+  box-sizing: border-box;
+  line-height: 60rpx;
+}
+.timebar-box .timebar-middle {
+  margin: 0 24rpx;
+  text-align: center;
+}
+.timebar-box .timebar-middle dt {
+  font-size: 30rpx;
+  color: #999999;
+  margin-bottom: 5rpx;
+  padding-right: 1rpx;
+}
+.timebar-box .timebar-middle dt text {
+  margin-right: 5rpx;
+  color: #ff0000;
+}
+.timebar-box .timebar-middle dd {
+  width: 204rpx;
+  padding-right: 10rpx;
+  box-sizing: border-box;
+  color: #fff;
+  height: 31rpx;
+  font-size: 18rpx;
+  background: url(https://api-yxdl.binglue.com/img/time-slot.png) no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.timebar-box.plane-timebar-box .timebar {
+  font-size: 42rpx;
+}
+.timebar-box.plane-timebar-box .timebar-middle dt em {
+  font-style: normal;
+  font-size: 25rpx;
+}
+.timebar-box.plane-timebar-box .timebar-middle dd {
+  width: 108rpx;
+  height: 28rpx;
+  font-size: 15rpx;
+}
+/**
+     * 加载中及...动画
+ */
+.loading {
+  height: 100rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #999999;
+}
+.loading .ani-dot {
+  display: inline-block;
+  width: 130rpx;
+}
+.loading .ani-dot:after {
+  animation: ellipsis 1.5s infinite;
+  -webkit-animation: ellipsis 1.5s infinite;
+  content: "\2026";
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+@keyframes ellipsis {
+  from {
+    width: 5rpx;
+  }
+  to {
+    width: 25rpx;
+  }
+}
+@-webkit-keyframes ellipsis {
+  from {
+    width: 5rpx;
+  }
+  to {
+    width: 25rpx;
+  }
+}

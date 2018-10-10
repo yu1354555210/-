@@ -1,0 +1,9 @@
+<template name="stars">
+    <block wx:for="{{stars}}">
+        <image class="star-image" data-key='{{item+1}}' src="{{key>item?starActive:starDefault}}" bindtap='selectStar'></image>
+    </block>
+</template>
+ <block wx:for="{{stars}}">
+    <image class="star-image" data-key='{{item+1}}' src="{{key>item?starActive:starDefault}}" bindtap='selectStar'></image>
+</block> 
+<navigator url='../../importStars/importStars'>引入星星组件</navigator>

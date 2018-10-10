@@ -1,0 +1,42 @@
+{
+	"pages": [
+		"pages/zhifuchenggong/zhifuchenggong",
+		"pages/index/index",
+		"pages/template/stars/stars",
+		"pages/dainifei/dainifei",
+		"pages/wode/wode",
+		"pages/logs/logs",
+		"pages/importStars/importStars"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#f7f7f8",
+		"navigationBarTitleText": "王者试练场",
+		"navigationBarTextStyle": "black"
+	},
+	"tabBar": {
+		"color": "#333",
+		"selectedColor": "#0b91ff",
+		"backgroundColor": "#fff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "历史",
+				"iconPath": "pages/img/history.png",
+				"selectedIconPath": "pages/img/history-on.png"
+			},
+			{
+				"pagePath": "pages/dainifei/dainifei",
+				"text": "带你飞",
+				"iconPath": "pages/img/fly.png",
+				"selectedIconPath": "pages/img/fly-on.png"
+			},
+			{
+				"pagePath": "pages/wode/wode",
+				"text": "我的",
+				"iconPath": "pages/img/mine.png",
+				"selectedIconPath": "pages/img/mine-on.png"
+			}
+		]
+	}
+}

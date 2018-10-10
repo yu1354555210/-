@@ -1,0 +1,19 @@
+<scroll-view>
+    <view class='top-img' bindtap='toDetail'>
+        <image src='../../image/img.jpg'></image>
+        <text>拉萨觉得垃圾啊来得及睡懒觉啊</text>
+    </view>
+    <view class='recommend-title'>
+        <span>奥斯丁家推荐</span>
+        <text>26032阅读</text>
+    </view>
+    <view class='news-list'>	
+		<view class='news-item' bindtap='toDetail' wx:for="{{list}}" data-detailText='{{item.detailText}}' data-detailTitle='{{item.title}}' >
+			<view class='news-title'>{{item.title}}</view>
+			<view class='news-summary'>{{item.text}}</view>
+			<view class='news-img'>
+				<image src='{{it["src"]}}' wx:key='it' wx:for-item='it' wx:for='{{item.img}}'></image>
+			</view>
+		</view>
+    </view>
+</scroll-view>

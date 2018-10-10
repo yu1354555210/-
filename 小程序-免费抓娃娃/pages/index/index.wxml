@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="bg-container" bindtap='showDialog'>
+  <image src='../../images/bg_01.jpg'></image>
+  <image src='../../images/bg_02.jpg'></image>
+  <image src='../../images/bg_03.jpg'></image>
+  <image src='../../images/bg_04.jpg'></image>
+  <image src='../../images/bg_05.jpg'></image>
+  <image src='../../images/bg_06.jpg'></image>
+</view>
+<view class='hint-toast-container' catchtap='hideDialog' wx:if='{{showToast}}'>
+  <view class='hint-toast'>
+    <view class='toast-title'>系统提示</view>
+    <view class='toast-content'>小程序部分功能限制,请点击“确定”，进入公众号即可在线抓娃娃</view>
+    <view class='toast-btn-box'>
+      <button class='cancel-btn' plain="true" bindtap='hideDialog'>取消</button>
+      <!-- <button class='confirm-btn' plain="true" open-type='contact'>确定</button> -->
+      <navigator target="miniProgram" open-type="navigate" app-id="wx455d4d48fbeb079c" path="pages/index/index" extra-data="" version="release">打开绑定的小程序</navigator>
+    </view>
+  </view>
+</view>

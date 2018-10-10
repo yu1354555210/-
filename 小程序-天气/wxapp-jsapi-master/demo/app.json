@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/ampWeather/ampWeather",
+    "pages/weather/weather"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#121212",
+    "navigationBarTitleText": "weather",
+    "navigationBarTextStyle":"#fff",
+    "backgroundColor": "#ddd"
+  }
+}

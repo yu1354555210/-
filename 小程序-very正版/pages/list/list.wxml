@@ -1,0 +1,56 @@
+<view class="wrapper">
+  <swiper class='swiper-box' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" current="{{swiperCurrent}}" interval="{{interval}}" duration="{{duration}}"
+    indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}">
+    <block wx:for="{{focusImgs}}">
+      <swiper-item class='top-img'>
+        <image src="{{item.img}}" data-src="{{item.wx_qrcode}}" data-title="{{item.title}}" data-appid="{{item.wx_appid}}" data-path="{{it.wx_path}}" bindtap='focusPreviewImage'
+        />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='section' wx:for="{{list}}" wx:if="{{index<3 && item.id != undefined}}">
+    <view class="title">{{item.title}}</view>
+    <view class="item-box">
+      <view class="item" wx:for="{{item.games}}" wx:for-item="it" wx:key='it' data-img="{{it.wx_qrcode}}" data-title="{{it.title}}"
+        bindtap="listPreviewImage" data-appid="{{it.wx_appid}}" data-path="{{it.wx_path}}">
+        <view class="icon">
+          <image src="{{it.icon}}"></image>
+        </view>
+        <view class="game-name">{{it.title}}</view>
+        <view class="game-other">
+          <text>{{it.people_num}}万</text>人在玩
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="title title-marno">最新发布</view>
+    <view class="adv-item-box">
+      <div class="adv-item" wx:for="{{ads}}" data-img="{{item.wx_qrcode}}" bindtap="listPreviewImage" data-ad="广告" data-title="{{item.title}}" data-appid="{{item.wx_appid}}" data-path="{{it.wx_path}}">
+        <image src="{{item.img}}"></image>
+      </div>
+    </view>
+    <!-- <scroll-view scroll-x class="scrollAdv">
+      <view class="adv-item-box">
+        <div class="adv-item" wx:for="{{ads}}" data-img="{{item.wx_qrcode}}" bindtap="listPreviewImage">
+          <image src="{{item.img}}"></image>
+        </div>
+      </view>
+    </scroll-view> -->
+  </view>
+  <view class='section' wx:for="{{list}}" wx:if="{{index>=3 && item.id != undefined}}">
+    <view class="title">{{item.title}}</view>
+    <view class="item-box">
+      <view class="item" wx:for="{{item.games}}" wx:for-item="it" wx:key='it' data-img="{{it.wx_qrcode}}" data-title="{{it.title}}"
+        bindtap="listPreviewImage" data-appid="{{it.wx_appid}}" data-path="{{it.wx_path}}">
+        <view class="icon">
+          <image src="{{it.icon}}"></image>
+        </view>
+        <view class="game-name">{{it.title}}</view>
+        <view class="game-other">
+          <text>{{it.people_num}}万</text>人在玩
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

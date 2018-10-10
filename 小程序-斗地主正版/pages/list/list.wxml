@@ -1,0 +1,65 @@
+<scroll-view bindscrolltolower="loadMore" scroll-y="true" style="height: {{clientHeight}}px;">
+  <swiper class='swiper-box' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+    indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}">
+    <block wx:for="{{focusImgs}}">
+      <swiper-item class='top-img'>
+        <block wx:if="{{item.wx_appid != ''}}">
+          <navigator target="miniProgram" open-type="navigate" app-id="{{item.wx_appid}}" path="{{item.wx_path}}" extra-data="{{item.wx_extra}}"
+            version="release">
+            <image src="{{item.img}}" />
+          </navigator>
+        </block>
+        <block wx:else>
+          <image src="{{item.img}}" data-src="{{item.wx_qrcode}}" bindtap='previewImage' />
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='news-list'>
+    <block wx:for="{{list}}">
+      <navigator class="news-item" wx:if="{{item.wx_appid != ''}}" target="miniProgram" open-type="navigate" app-id="{{item.wx_appid}}" path="{{item.wx_path}}" extra-data="{{item.wx_extra}}"
+        version="release">
+        <view class="news-fl">
+          <view class="news-image">
+            <image src="{{item.icon}}"></image>
+          </view>
+          <view class="news-info">
+            <view class="news-name">
+              {{item.title}}
+              <text>{{item.people_num}}万人在玩</text>
+            </view>
+            <view class="news-dec">{{item.game_desc}}</view>
+          </view>
+        </view>
+        <view class="news-fr">
+          <button class="begin-btn">开始游戏</button>
+        </view>
+      </navigator>
+      <view wx:else class="news-item" bindtap="listPreviewImage" data-img="{{item.wx_qrcode}}">
+        <view class="news-fl">
+          <view class="news-image">
+            <image src="{{item.icon}}"></image>
+          </view>
+          <view class="news-info">
+            <view class="news-name">
+              {{item.title}}
+              <text>{{item.people_num}}万人在玩</text>
+            </view>
+            <view class="news-dec">{{item.game_desc}}</view>
+          </view>
+        </view>
+        <view class="news-fr">
+          <button class="begin-btn">开始游戏</button>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="tips">
+    <view wx:if="{{hasMore}}">
+      <text>玩命的加载中...</text>
+    </view>
+    <view wx:else>
+      <text>没有更多内容</text>
+    </view>
+  </view>
+</scroll-view>

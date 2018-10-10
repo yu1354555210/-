@@ -1,0 +1,20 @@
+<!-- <view class='fixed-top'>
+	<view class='slide-fl'>
+		<p>文中提到了</p>
+		<view class='total-shop'>
+			<span>0</span>家店
+		</view>
+	</view>
+	<image src='../../image/down.png' class='down-icon'></image>
+</view> -->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class='content'>
+	<view class='title'>{{title}}</view>
+	<view class='other'>{{source_type}}丨推荐</view>
+	<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+	<view class='footer' wx:if="{{isFooter}}">
+		<text>本页面由约饭福利社采用应用内搜索技术自动抓取,在未改变文章原意的情况下对版式做了优化以及提升阅读体验。</text>
+	</view>
+</view>
+<button class='fixed-bottom' open-type='share'>约上好友一起吃</button>

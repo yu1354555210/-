@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/list/list",
+    "pages/fen/fen",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "豆荚游戏",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  }
+}

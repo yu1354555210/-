@@ -1,0 +1,23 @@
+<scroll-view bindscrolltolower="loadMore" scroll-y="true" style="height: {{clientHeight}}px;">
+  <view class='news-list'>
+    <view class='news-item {{item.thumbs.length==1?"new-oneimg-item":""}}' bindtap='toDetail' wx:for="{{list}}" data-contentid="{{item.id}}">
+      <view class='news-title'>{{item.title}}
+        <text class='time' wx:if="{{item.thumbs.length==1}}">{{item.create_time}}</text>
+      </view>
+      <view class='news-img'>
+        <image src='{{it}}' wx:key='it' wx:for-item='it' wx:for='{{item.thumbs}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class="tips">
+    <view wx:if="{{hasMore}}">
+      <text>玩命的加载中...</text>
+    </view>
+    <view wx:else>
+      <text>没有更多内容</text>
+    </view>
+  </view>
+  <!-- <view class='flex-icon'>
+    <image src='../../images/fix-icon.png' bindtap='previewFlexImage'></image>
+  </view> -->
+</scroll-view>

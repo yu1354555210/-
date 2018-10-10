@@ -1,0 +1,2 @@
+/* pages/importStars/importStars.wxss */
+@import "../template/stars/stars.wxss";

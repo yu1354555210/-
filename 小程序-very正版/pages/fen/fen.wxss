@@ -1,0 +1,21 @@
+.fen-box{
+  padding: 20rpx;
+}
+
+button{
+  margin-bottom: 20rpx;
+  white-space: nowrap;
+}
+
+text{
+  text-align: center;
+  padding: 30rpx;
+  display: block;
+  width: 100%;
+  font-size: 24rpx;
+  box-sizing: border-box;
+}
+
+text{
+  color: red;
+}
