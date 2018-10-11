@@ -117,6 +117,7 @@ Page({
 				})
 			}
 		}
+
 		app.aldstat.sendEvent('点击', {
 			'游戏点击统计-焦点图': viewTitle
 		})

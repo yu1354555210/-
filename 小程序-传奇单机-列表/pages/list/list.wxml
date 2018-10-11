@@ -18,11 +18,8 @@
     </view>
   </view>
 </scroll-view>
-<view wx:if="{{onlineStatus}}">
-  <view class="close"  bindtap='beginGame'><image src="../../images/close2.png"></image></view>
-  <image class="bg" src="../../images/bg.png"  style="height: {{clientHeight}}px;"></image>
-  <view class='beginBtn' bindtap='beginGame'>
-    <image src='../../images/button.png'></image>
-    <text>传奇单机</text>
-  </view>
+<view wx:if="{{onlineStatus}}" class="btn-bg" style="height: {{clientHeight}}px;">
+  <view class="close" bindtap='beginGame' data-name="{{name3}}" data-appid="{{appid1}}" data-path="{{path1}}"></view>
+  <view class='begin-btn' data-name="{{name1}}" bindtap='beginGame' data-appid="{{appid1}}" data-path="{{path1}}">传奇单机</view>
+  <view class='begin-btn' data-name="{{name2}}" bindtap='beginGame' data-appid="{{appid2}}" data-path="{{path2}}">传奇变态私服</view>
 </view>

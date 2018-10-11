@@ -1,7 +1,7 @@
 var app = getApp()
 var apiId = 11;
 var game_id = 5;
-var version = '1.0.2';
+var version = '1.0.3';
 Page({
 
 	/**
@@ -23,22 +23,45 @@ Page({
 		duration: 500,
 		focusImgs: "",
 		flexQrcodes: [],
-    onlineStatus: false
+		onlineStatus: false,
+		name1: '传奇单机',
+		name2: '传奇变态私服',
+		name3: '传奇单机-关闭按钮',
+		appid1: 'wx79ade44c39cefc7f',
+		path1: '?chid=2068&subchid=CQLE_DJ',
+		appid2: 'wxefe8997276c7a7d4',
+		path2: '?from=1473',
 	},
-  beginGame(){
-    this.jump()
-  },
-  jump() {
-    var toAppid = 'wx79ade44c39cefc7f';
-    wx.navigateToMiniProgram({
-      appId: toAppid,
-      path: '?chid=2068&subchid=CQLE_DJ',
-      // envVersion: 'develop',
-      success(res) {
-        // 打开成功
-      }
-    })
-  },
+	beginGame(event) {
+		var toAppid = event.currentTarget.dataset.appid;
+		var toPath = event.currentTarget.dataset.path;
+		var viewName = event.currentTarget.dataset.name;
+		wx.navigateToMiniProgram({
+			appId: toAppid,
+			path: toPath,
+			// envVersion: 'develop',
+			success(res) {
+				// 打开成功
+			}
+		})
+		
+		app.aldstat.sendEvent('点击', {
+			'按钮点击统计': viewName
+		})
+	},
+	music(){
+		const innerAudioContext = wx.createInnerAudioContext();
+		innerAudioContext.autoplay = true;
+		innerAudioContext.loop = true;
+		innerAudioContext.src = 'http://wawa.binglue.com/xiaochengxu/chuanqi/chuanqi.mp3?1';
+		innerAudioContext.onPlay(() => {
+			console.log('开始播放')
+		})
+		innerAudioContext.onError((res) => {
+			console.log(res.errMsg)
+			console.log(res.errCode)
+		})
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载
@@ -51,23 +74,23 @@ Page({
 			mask: true
 		});
 
-    wx.request({
-      url: 'https://wawash.paopaoren.cn/api/xiaoyouxi/get_status',
-      data: {
-        game_id: game_id,
-        version: version
-      },
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function (res) {
-        console.log(res)
-        if (res.data.data.status == 2) {
-          that.setData({
-            onlineStatus: true
-          })
-        }
-      },
-    })
+		wx.request({
+			url: 'https://wawash.paopaoren.cn/api/xiaoyouxi/get_status',
+			data: {
+				game_id: game_id,
+				version: version
+			},
+			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+			// header: {}, // 设置请求的 header
+			success: function (res) {
+				if (res.data.data.status == 2) {
+					that.setData({
+						onlineStatus: true
+					})
+					that.music();
+				}
+			},
+		})
 
 
 		//列表

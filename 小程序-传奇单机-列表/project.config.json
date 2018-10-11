@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
 	"appid": "wx490690054059ea47",
-	"projectname": "%E4%BC%A0%E5%A5%87%E5%8D%95%E6%9C%BA-%E5%88%97%E8%A1%A8",
+	"projectname": "%E4%BC%A0%E5%A5%87%E5%8D%95%E6%9C%BA-%E5%88%97%E8%A1%A8-%E6%96%B0",
 	"scripts": {
 		"beforeCompile": "",
 		"beforePreview": "",
