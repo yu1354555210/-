@@ -1,8 +1,0 @@
-<!--index.wxml-->
-<view class="fen-box">
-  <text>我的openid是:　{{openid}}</text>
-    <block wx:for="{{btnList}}">
-      <button type="primary" open-type="share" id="{{index}}" data-img="{{item.img}}" data-dec="{{item.description}}" data-appid="{{item.appid}}" data-path="{{item.link}}" data-params="{{item.params}}">{{item.description}}</button>
-    </block>
-    <navigator class="to-index" url='../list/list'>回到首页</navigator> 
-</view>
