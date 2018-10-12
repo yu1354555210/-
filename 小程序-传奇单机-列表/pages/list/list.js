@@ -69,8 +69,6 @@ Page({
 	onLoad: function (options) {
 		var that = this;
 
-		
-
 		wx.request({
 			url: 'https://wawash.paopaoren.cn/api/xiaoyouxi/get_status',
 			data: {
@@ -90,11 +88,9 @@ Page({
 						title: '加载中...',
 						mask: true
 					});
-					console.log('test')
 				}
 			},
 		})
-
 
 		//列表
 		wx.request({
