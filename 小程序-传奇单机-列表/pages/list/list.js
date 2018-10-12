@@ -90,6 +90,7 @@ Page({
 						title: '加载中...',
 						mask: true
 					});
+					console.log('test')
 				}
 			},
 		})
