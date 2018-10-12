@@ -206,8 +206,9 @@ Page({
 			console.log(res.target)
 		}
 		return {
-			title: '传奇单机',
-			path: '/pages/list/list'
+			title: '曾经的战友都已在玛法大陆集结完毕，就差你了！',
+			path: '/pages/list/list',
+			imageUrl: "/images/share.png",
 		}
 	},
 	//上拉加载更多
