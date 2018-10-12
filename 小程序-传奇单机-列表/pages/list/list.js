@@ -69,10 +69,7 @@ Page({
 	onLoad: function (options) {
 		var that = this;
 
-		wx.showLoading({
-			title: '加载中...',
-			mask: true
-		});
+		
 
 		wx.request({
 			url: 'https://wawash.paopaoren.cn/api/xiaoyouxi/get_status',
@@ -88,6 +85,11 @@ Page({
 						onlineStatus: true
 					})
 					that.music();
+				}else{
+					wx.showLoading({
+						title: '加载中...',
+						mask: true
+					});
 				}
 			},
 		})
